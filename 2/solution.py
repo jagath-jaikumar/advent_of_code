@@ -41,47 +41,21 @@ def part_1():
 
 
 def part_2():
-    ROCK = 1
-    PAPER = 2
-    SCISSORS = 3
+    with open(input_path) as f:
+        plays = [_.replace(" ", "") for _ in f.read().split("\n")]
 
-    lookup = {
-        "A": ROCK,
-        "B": PAPER,
-        "C": SCISSORS,
+    scores = {
+        "AX": 3,
+        "BX": 1,
+        "CX": 2,
+        "AY": 3 + 1,
+        "BY": 3 + 2,
+        "CY": 3 + 3,
+        "AZ": 6 + 2,
+        "BZ": 6 + 3,
+        "CZ": 6 + 1,
     }
 
-    with open(input_path) as f:
-        plays = f.read().split("\n")
-
-    summ = 0
-    for play in plays:
-        opponent, expectation = lookup[play[0]], play[-1]
-
-        if expectation == "X":
-            if opponent == SCISSORS:
-                me = PAPER
-            elif opponent == PAPER:
-                me == ROCK
-            else:
-                me = SCISSORS
-
-            summ += me
-
-        elif expectation == "Y":
-            me = opponent
-            summ += me + 3
-        else:
-            if opponent == SCISSORS:
-                me = ROCK
-            elif opponent == PAPER:
-                me == SCISSORS
-            else:
-                me = PAPER
-
-            summ += me + 6
+    summ = sum([scores[play] for play in plays])
 
     print(summ)
-
-
-part_2()
