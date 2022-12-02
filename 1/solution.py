@@ -16,7 +16,6 @@ def part_1():
     print(max_elf_sum)
 
 
-## PART 2:
 def part_2():
     with open(input_path) as f:
         elves = f.read().split("\n\n")
