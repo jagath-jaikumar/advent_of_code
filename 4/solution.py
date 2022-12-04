@@ -34,12 +34,10 @@ def part_2():
         a11, a12 = assignment1.split("-")
         a21, a22 = assignment2.split("-")
 
-        a1 = range(int(a11)-1, int(a12)+1)
-        a2 = range(int(a21), int(a22))
+        def is_overlapping(x1,x2,y1,y2):
+            return max(x1,y1) <= min(x2,y2)
 
-        print(a1, a2)
-        if list(set(a1).intersection(a2)):
-            
+        if is_overlapping(int(a11), int(a12), int(a21), int(a22)):
             summ+=1
     
     print(summ)
