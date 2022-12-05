@@ -13,7 +13,7 @@ def part_1():
         if elf_sum > max_elf_sum:
             max_elf_sum = elf_sum
 
-    print(max_elf_sum)
+    return max_elf_sum
 
 
 def part_2():
@@ -22,4 +22,4 @@ def part_2():
 
     elf_sums = [sum([int(_) for _ in elf.split("\n")]) for elf in elves]
 
-    print(sum(sorted(elf_sums, reverse=True)[:3]))
+    return sum(sorted(elf_sums, reverse=True)[:3])

@@ -37,7 +37,7 @@ def part_1():
         else:
             summ += me + 6
 
-    print(summ)
+    return summ
 
 
 def part_2():
@@ -58,4 +58,4 @@ def part_2():
 
     summ = sum([scores[play] for play in plays])
 
-    print(summ)
+    return summ

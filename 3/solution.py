@@ -28,7 +28,7 @@ def part_1():
         ]
     )
 
-    print(summ)
+    return summ
 
 
 def part_2():
@@ -42,4 +42,4 @@ def part_2():
         ]
     )
 
-    print(summ)
+    return summ

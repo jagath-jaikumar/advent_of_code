@@ -3,7 +3,6 @@ from typing import List
 
 input_path = os.path.join(os.path.dirname(__file__), "input.txt")
 
-
 def part_1():
     with open(input_path) as f:
         assignments = f.read().split("\n")
@@ -21,7 +20,7 @@ def part_1():
         if (a11 <= a21 and a12 >= a22) or (a21 <= a11 and a22 >= a12):
             summ+=1
     
-    print(summ)
+    return summ
 
 def part_2():
     with open(input_path) as f:
@@ -40,7 +39,4 @@ def part_2():
         if is_overlapping(int(a11), int(a12), int(a21), int(a22)):
             summ+=1
     
-    print(summ)
-
-part_2()
-        
+    return summ
