@@ -27,12 +27,12 @@ def day(args):
   a = time.time()
   print(i.part_1())
   if args['--timed']:
-    print(f"Part 1 Solution time: {time.time()-a}")
+    print(f"Part 1 Solution time: {time.time()-a} seconds")
   
   b = time.time()
   print(i.part_2())
   if args['--timed']:
-    print(f"Part 2 Solution time: {time.time()-b}")
+    print(f"Part 2 Solution time: {time.time()-b} seconds")
 
 
 def generate(args):
