@@ -95,13 +95,13 @@ def part_2():
   q = deque([root])
   summ = 0
 
-  eligible = []
+  solution = float('inf')
   while q:
     p = q.popleft()
-    if p.total_size > desired_space_reduction:
-      eligible.append(p.total_size)
+    if p.total_size > desired_space_reduction and p.total_size < solution:
+      solution = p.total_size
     
     for _, sub in p.subdirectories.items():
       q.append(sub) 
   
-  return min(eligible)
+  return solution
